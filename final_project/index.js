@@ -10,6 +10,7 @@ app.use(express.json());
 
 app.use("/customer", session({ secret: "fingerprint_customer", resave: true, saveUninitialized: true }))
 
+//authentication
 app.use("/customer/auth/*", function auth(req, res, next) {
     if (req.session.authorization) {
         let token = req.session.authorization['accessToken'];

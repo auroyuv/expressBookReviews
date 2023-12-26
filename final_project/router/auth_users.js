@@ -6,15 +6,15 @@ const regd_users = express.Router();
 let users = [];
 
 // Check if the username is not empty and not undefined
-const isValid = (username) => { //returns boolean
+const isValid = (username) => {
   if (username && username.trim() !== '') {
     return true;
   }
   return false;
-}
+};
 
-// Check if username and password match the one we have in records.
-const authenticatedUser = (username, password) => { //returns boolean
+// Check username is matching with password
+const authenticatedUser = (username, password) => {
   let validusers = users.filter((user) => {
     return (user.username === username && user.password === password)
   });
@@ -95,6 +95,9 @@ regd_users.delete("/auth/review/:isbn", (req, res) => {
     return res.status(404).json({ message: "Book not found with the given ISBN" });
   }
 });
+
+
+
 
 
 module.exports.authenticated = regd_users;

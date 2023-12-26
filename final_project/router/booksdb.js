@@ -1,6 +1,6 @@
 
-//The ISBN number is represented by the index value of each book entry in the books object.
 
+//The ISBN number is represented by the index value of each book entry in the books object.
 
 let books = {
       1: { "author": "Chinua Achebe", "title": "Things Fall Apart", "reviews": {} },
